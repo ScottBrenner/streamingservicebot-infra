@@ -23,6 +23,6 @@ func TestStreamingservicebotInfraStack(t *testing.T) {
 	}
 
 	template := gjson.ParseBytes(bytes)
-	displayName := template.Get("Resources.MyTopic86869434.Properties.DisplayName").String()
-	assert.Equal(t, "MyCoolTopic", displayName)
+	name := template.Get("Resources.StreamingServiceBotECSCluster276C1B28.Type").String()
+	assert.Equal(t, "AWS::ECS::Cluster", name)
 }

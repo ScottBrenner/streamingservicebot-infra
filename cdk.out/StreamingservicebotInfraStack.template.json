@@ -1,0 +1,396 @@
+{
+  "Resources": {
+    "StreamingServiceBotVpc665A4913": {
+      "Type": "AWS::EC2::VPC",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "StreamingservicebotInfraStack/StreamingServiceBotVpc"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "StreamingservicebotInfraStack/StreamingServiceBotVpc/Resource"
+      }
+    },
+    "StreamingServiceBotVpcPublicSubnet1SubnetAA3E9D0F": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/17",
+        "VpcId": {
+          "Ref": "StreamingServiceBotVpc665A4913"
+        },
+        "AvailabilityZone": "dummy1a",
+        "MapPublicIpOnLaunch": true,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "Public"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Public"
+          },
+          {
+            "Key": "Name",
+            "Value": "StreamingservicebotInfraStack/StreamingServiceBotVpc/PublicSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "StreamingservicebotInfraStack/StreamingServiceBotVpc/PublicSubnet1/Subnet"
+      }
+    },
+    "StreamingServiceBotVpcPublicSubnet1RouteTableE22DF371": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "StreamingServiceBotVpc665A4913"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "StreamingservicebotInfraStack/StreamingServiceBotVpc/PublicSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "StreamingservicebotInfraStack/StreamingServiceBotVpc/PublicSubnet1/RouteTable"
+      }
+    },
+    "StreamingServiceBotVpcPublicSubnet1RouteTableAssociation61582D1D": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "StreamingServiceBotVpcPublicSubnet1RouteTableE22DF371"
+        },
+        "SubnetId": {
+          "Ref": "StreamingServiceBotVpcPublicSubnet1SubnetAA3E9D0F"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "StreamingservicebotInfraStack/StreamingServiceBotVpc/PublicSubnet1/RouteTableAssociation"
+      }
+    },
+    "StreamingServiceBotVpcPublicSubnet1DefaultRoute12C11DD7": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "StreamingServiceBotVpcPublicSubnet1RouteTableE22DF371"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": {
+          "Ref": "StreamingServiceBotVpcIGW2C1E83BE"
+        }
+      },
+      "DependsOn": [
+        "StreamingServiceBotVpcVPCGW0B4824A1"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "StreamingservicebotInfraStack/StreamingServiceBotVpc/PublicSubnet1/DefaultRoute"
+      }
+    },
+    "StreamingServiceBotVpcPublicSubnet1EIPB3F7D7F1": {
+      "Type": "AWS::EC2::EIP",
+      "Properties": {
+        "Domain": "vpc",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "StreamingservicebotInfraStack/StreamingServiceBotVpc/PublicSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "StreamingservicebotInfraStack/StreamingServiceBotVpc/PublicSubnet1/EIP"
+      }
+    },
+    "StreamingServiceBotVpcPublicSubnet1NATGateway39ABF431": {
+      "Type": "AWS::EC2::NatGateway",
+      "Properties": {
+        "SubnetId": {
+          "Ref": "StreamingServiceBotVpcPublicSubnet1SubnetAA3E9D0F"
+        },
+        "AllocationId": {
+          "Fn::GetAtt": [
+            "StreamingServiceBotVpcPublicSubnet1EIPB3F7D7F1",
+            "AllocationId"
+          ]
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "StreamingservicebotInfraStack/StreamingServiceBotVpc/PublicSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "StreamingservicebotInfraStack/StreamingServiceBotVpc/PublicSubnet1/NATGateway"
+      }
+    },
+    "StreamingServiceBotVpcPrivateSubnet1SubnetF068ACE5": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.128.0/17",
+        "VpcId": {
+          "Ref": "StreamingServiceBotVpc665A4913"
+        },
+        "AvailabilityZone": "dummy1a",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "Private"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Private"
+          },
+          {
+            "Key": "Name",
+            "Value": "StreamingservicebotInfraStack/StreamingServiceBotVpc/PrivateSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "StreamingservicebotInfraStack/StreamingServiceBotVpc/PrivateSubnet1/Subnet"
+      }
+    },
+    "StreamingServiceBotVpcPrivateSubnet1RouteTable9890AE03": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "StreamingServiceBotVpc665A4913"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "StreamingservicebotInfraStack/StreamingServiceBotVpc/PrivateSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "StreamingservicebotInfraStack/StreamingServiceBotVpc/PrivateSubnet1/RouteTable"
+      }
+    },
+    "StreamingServiceBotVpcPrivateSubnet1RouteTableAssociation34793A9D": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "StreamingServiceBotVpcPrivateSubnet1RouteTable9890AE03"
+        },
+        "SubnetId": {
+          "Ref": "StreamingServiceBotVpcPrivateSubnet1SubnetF068ACE5"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "StreamingservicebotInfraStack/StreamingServiceBotVpc/PrivateSubnet1/RouteTableAssociation"
+      }
+    },
+    "StreamingServiceBotVpcPrivateSubnet1DefaultRoute936869E7": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "StreamingServiceBotVpcPrivateSubnet1RouteTable9890AE03"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "NatGatewayId": {
+          "Ref": "StreamingServiceBotVpcPublicSubnet1NATGateway39ABF431"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "StreamingservicebotInfraStack/StreamingServiceBotVpc/PrivateSubnet1/DefaultRoute"
+      }
+    },
+    "StreamingServiceBotVpcIGW2C1E83BE": {
+      "Type": "AWS::EC2::InternetGateway",
+      "Properties": {
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "StreamingservicebotInfraStack/StreamingServiceBotVpc"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "StreamingservicebotInfraStack/StreamingServiceBotVpc/IGW"
+      }
+    },
+    "StreamingServiceBotVpcVPCGW0B4824A1": {
+      "Type": "AWS::EC2::VPCGatewayAttachment",
+      "Properties": {
+        "VpcId": {
+          "Ref": "StreamingServiceBotVpc665A4913"
+        },
+        "InternetGatewayId": {
+          "Ref": "StreamingServiceBotVpcIGW2C1E83BE"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "StreamingservicebotInfraStack/StreamingServiceBotVpc/VPCGW"
+      }
+    },
+    "StreamingServiceBotECSCluster276C1B28": {
+      "Type": "AWS::ECS::Cluster",
+      "Metadata": {
+        "aws:cdk:path": "StreamingservicebotInfraStack/StreamingServiceBotECSCluster/Resource"
+      }
+    },
+    "StreamingServiceBotTaskDefTaskRoleB3DEE1B4": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "StreamingservicebotInfraStack/StreamingServiceBotTaskDef/TaskRole/Resource"
+      }
+    },
+    "StreamingServiceBotTaskDef624CD6D8": {
+      "Type": "AWS::ECS::TaskDefinition",
+      "Properties": {
+        "ContainerDefinitions": [
+          {
+            "Environment": [
+              {
+                "Name": "SSB_REDDIT_ID",
+                "Value": ""
+              },
+              {
+                "Name": "SSB_REDDIT_PASSWORD",
+                "Value": ""
+              },
+              {
+                "Name": "SSB_REDDIT_SECRET",
+                "Value": ""
+              },
+              {
+                "Name": "SSB_REDDIT_USERNAME",
+                "Value": ""
+              },
+              {
+                "Name": "SSB_SPOTIFY_CLIENT_ID",
+                "Value": ""
+              },
+              {
+                "Name": "SSB_SPOTIFY_CLIENT_SECRET",
+                "Value": ""
+              },
+              {
+                "Name": "SSB_YOUTUBE_KEY",
+                "Value": ""
+              }
+            ],
+            "Essential": true,
+            "Image": "ghcr.io/scottbrenner/streamingservicebot",
+            "Name": "StreamingServiceBotContainer",
+            "PortMappings": [
+              {
+                "ContainerPort": 80,
+                "Protocol": "tcp"
+              }
+            ]
+          }
+        ],
+        "Cpu": "256",
+        "Family": "StreamingservicebotInfraStackStreamingServiceBotTaskDef9C5FBEE0",
+        "Memory": "512",
+        "NetworkMode": "awsvpc",
+        "RequiresCompatibilities": [
+          "FARGATE"
+        ],
+        "TaskRoleArn": {
+          "Fn::GetAtt": [
+            "StreamingServiceBotTaskDefTaskRoleB3DEE1B4",
+            "Arn"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "StreamingservicebotInfraStack/StreamingServiceBotTaskDef/Resource"
+      }
+    },
+    "StreamingServiceBotService6B8080AA": {
+      "Type": "AWS::ECS::Service",
+      "Properties": {
+        "Cluster": {
+          "Ref": "StreamingServiceBotECSCluster276C1B28"
+        },
+        "DeploymentConfiguration": {
+          "MaximumPercent": 200,
+          "MinimumHealthyPercent": 50
+        },
+        "EnableECSManagedTags": false,
+        "LaunchType": "FARGATE",
+        "NetworkConfiguration": {
+          "AwsvpcConfiguration": {
+            "AssignPublicIp": "DISABLED",
+            "SecurityGroups": [
+              {
+                "Fn::GetAtt": [
+                  "StreamingServiceBotServiceSecurityGroupCDB5ABD5",
+                  "GroupId"
+                ]
+              }
+            ],
+            "Subnets": [
+              {
+                "Ref": "StreamingServiceBotVpcPrivateSubnet1SubnetF068ACE5"
+              }
+            ]
+          }
+        },
+        "TaskDefinition": {
+          "Ref": "StreamingServiceBotTaskDef624CD6D8"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "StreamingservicebotInfraStack/StreamingServiceBotService/Service"
+      }
+    },
+    "StreamingServiceBotServiceSecurityGroupCDB5ABD5": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "StreamingservicebotInfraStack/StreamingServiceBotService/SecurityGroup",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "VpcId": {
+          "Ref": "StreamingServiceBotVpc665A4913"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "StreamingservicebotInfraStack/StreamingServiceBotService/SecurityGroup/Resource"
+      }
+    }
+  },
+  "Outputs": {
+    "Service": {
+      "Value": {
+        "Fn::GetAtt": [
+          "StreamingServiceBotService6B8080AA",
+          "Name"
+        ]
+      }
+    }
+  }
+}

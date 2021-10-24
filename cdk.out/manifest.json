@@ -1,0 +1,409 @@
+{
+  "version": "14.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "StreamingservicebotInfraStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws:///",
+      "properties": {
+        "templateFile": "StreamingservicebotInfraStack.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/StreamingservicebotInfraStack/StreamingServiceBotVpc/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StreamingServiceBotVpc665A4913",
+            "trace": [
+              "new Vpc (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:384:25)",
+              "/tmp/jsii-runtime.3855963085/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/tmp/jsii-runtime.3855963085/lib/program.js:8860:24)",
+              "Kernel._create (/tmp/jsii-runtime.3855963085/lib/program.js:8432:34)",
+              "Kernel.create (/tmp/jsii-runtime.3855963085/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/tmp/jsii-runtime.3855963085/lib/program.js:9757:36)",
+              "KernelHost.run (/tmp/jsii-runtime.3855963085/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/tmp/jsii-runtime.3855963085/lib/program.js:9721:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/StreamingservicebotInfraStack/StreamingServiceBotVpc/PublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StreamingServiceBotVpcPublicSubnet1SubnetAA3E9D0F",
+            "trace": [
+              "new Subnet (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:708:24)",
+              "new PublicSubnet (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:873:9)",
+              "/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:606:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:590:32)",
+              "Vpc.createSubnets (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:586:18)",
+              "new Vpc (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:405:14)",
+              "/tmp/jsii-runtime.3855963085/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/tmp/jsii-runtime.3855963085/lib/program.js:8860:24)",
+              "Kernel._create (/tmp/jsii-runtime.3855963085/lib/program.js:8432:34)",
+              "Kernel.create (/tmp/jsii-runtime.3855963085/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/tmp/jsii-runtime.3855963085/lib/program.js:9757:36)",
+              "KernelHost.run (/tmp/jsii-runtime.3855963085/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/tmp/jsii-runtime.3855963085/lib/program.js:9721:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/StreamingservicebotInfraStack/StreamingServiceBotVpc/PublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StreamingServiceBotVpcPublicSubnet1RouteTableE22DF371",
+            "trace": [
+              "new Subnet (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:724:23)",
+              "new PublicSubnet (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:873:9)",
+              "/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:606:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:590:32)",
+              "Vpc.createSubnets (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:586:18)",
+              "new Vpc (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:405:14)",
+              "/tmp/jsii-runtime.3855963085/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/tmp/jsii-runtime.3855963085/lib/program.js:8860:24)",
+              "Kernel._create (/tmp/jsii-runtime.3855963085/lib/program.js:8432:34)",
+              "Kernel.create (/tmp/jsii-runtime.3855963085/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/tmp/jsii-runtime.3855963085/lib/program.js:9757:36)",
+              "KernelHost.run (/tmp/jsii-runtime.3855963085/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/tmp/jsii-runtime.3855963085/lib/program.js:9721:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/StreamingservicebotInfraStack/StreamingServiceBotVpc/PublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StreamingServiceBotVpcPublicSubnet1RouteTableAssociation61582D1D",
+            "trace": [
+              "new Subnet (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:729:9)",
+              "new PublicSubnet (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:873:9)",
+              "/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:606:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:590:32)",
+              "Vpc.createSubnets (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:586:18)",
+              "new Vpc (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:405:14)",
+              "/tmp/jsii-runtime.3855963085/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/tmp/jsii-runtime.3855963085/lib/program.js:8860:24)",
+              "Kernel._create (/tmp/jsii-runtime.3855963085/lib/program.js:8432:34)",
+              "Kernel.create (/tmp/jsii-runtime.3855963085/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/tmp/jsii-runtime.3855963085/lib/program.js:9757:36)",
+              "KernelHost.run (/tmp/jsii-runtime.3855963085/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/tmp/jsii-runtime.3855963085/lib/program.js:9721:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/StreamingservicebotInfraStack/StreamingServiceBotVpc/PublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StreamingServiceBotVpcPublicSubnet1DefaultRoute12C11DD7",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:764:23)",
+              "/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:417:30",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:416:32)",
+              "/tmp/jsii-runtime.3855963085/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/tmp/jsii-runtime.3855963085/lib/program.js:8860:24)",
+              "Kernel._create (/tmp/jsii-runtime.3855963085/lib/program.js:8432:34)",
+              "Kernel.create (/tmp/jsii-runtime.3855963085/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/tmp/jsii-runtime.3855963085/lib/program.js:9757:36)",
+              "KernelHost.run (/tmp/jsii-runtime.3855963085/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/tmp/jsii-runtime.3855963085/lib/program.js:9721:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/StreamingservicebotInfraStack/StreamingServiceBotVpc/PublicSubnet1/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StreamingServiceBotVpcPublicSubnet1EIPB3F7D7F1",
+            "trace": [
+              "PublicSubnet.addNatGateway (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:893:27)",
+              "NatGatewayProvider.configureNat (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/nat.js:82:33)",
+              "Vpc.createNatGateways (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:564:18)",
+              "new Vpc (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:422:22)",
+              "/tmp/jsii-runtime.3855963085/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/tmp/jsii-runtime.3855963085/lib/program.js:8860:24)",
+              "Kernel._create (/tmp/jsii-runtime.3855963085/lib/program.js:8432:34)",
+              "Kernel.create (/tmp/jsii-runtime.3855963085/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/tmp/jsii-runtime.3855963085/lib/program.js:9757:36)",
+              "KernelHost.run (/tmp/jsii-runtime.3855963085/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/tmp/jsii-runtime.3855963085/lib/program.js:9721:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/StreamingservicebotInfraStack/StreamingServiceBotVpc/PublicSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StreamingServiceBotVpcPublicSubnet1NATGateway39ABF431",
+            "trace": [
+              "PublicSubnet.addNatGateway (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:891:21)",
+              "NatGatewayProvider.configureNat (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/nat.js:82:33)",
+              "Vpc.createNatGateways (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:564:18)",
+              "new Vpc (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:422:22)",
+              "/tmp/jsii-runtime.3855963085/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/tmp/jsii-runtime.3855963085/lib/program.js:8860:24)",
+              "Kernel._create (/tmp/jsii-runtime.3855963085/lib/program.js:8432:34)",
+              "Kernel.create (/tmp/jsii-runtime.3855963085/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/tmp/jsii-runtime.3855963085/lib/program.js:9757:36)",
+              "KernelHost.run (/tmp/jsii-runtime.3855963085/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/tmp/jsii-runtime.3855963085/lib/program.js:9721:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/StreamingservicebotInfraStack/StreamingServiceBotVpc/PrivateSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StreamingServiceBotVpcPrivateSubnet1SubnetF068ACE5",
+            "trace": [
+              "new Subnet (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:708:24)",
+              "new PrivateSubnet (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:913:9)",
+              "/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:611:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:590:32)",
+              "Vpc.createSubnets (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:586:18)",
+              "new Vpc (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:405:14)",
+              "/tmp/jsii-runtime.3855963085/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/tmp/jsii-runtime.3855963085/lib/program.js:8860:24)",
+              "Kernel._create (/tmp/jsii-runtime.3855963085/lib/program.js:8432:34)",
+              "Kernel.create (/tmp/jsii-runtime.3855963085/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/tmp/jsii-runtime.3855963085/lib/program.js:9757:36)",
+              "KernelHost.run (/tmp/jsii-runtime.3855963085/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/tmp/jsii-runtime.3855963085/lib/program.js:9721:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/StreamingservicebotInfraStack/StreamingServiceBotVpc/PrivateSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StreamingServiceBotVpcPrivateSubnet1RouteTable9890AE03",
+            "trace": [
+              "new Subnet (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:724:23)",
+              "new PrivateSubnet (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:913:9)",
+              "/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:611:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:590:32)",
+              "Vpc.createSubnets (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:586:18)",
+              "new Vpc (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:405:14)",
+              "/tmp/jsii-runtime.3855963085/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/tmp/jsii-runtime.3855963085/lib/program.js:8860:24)",
+              "Kernel._create (/tmp/jsii-runtime.3855963085/lib/program.js:8432:34)",
+              "Kernel.create (/tmp/jsii-runtime.3855963085/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/tmp/jsii-runtime.3855963085/lib/program.js:9757:36)",
+              "KernelHost.run (/tmp/jsii-runtime.3855963085/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/tmp/jsii-runtime.3855963085/lib/program.js:9721:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/StreamingservicebotInfraStack/StreamingServiceBotVpc/PrivateSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StreamingServiceBotVpcPrivateSubnet1RouteTableAssociation34793A9D",
+            "trace": [
+              "new Subnet (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:729:9)",
+              "new PrivateSubnet (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:913:9)",
+              "/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:611:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:590:32)",
+              "Vpc.createSubnets (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:586:18)",
+              "new Vpc (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:405:14)",
+              "/tmp/jsii-runtime.3855963085/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/tmp/jsii-runtime.3855963085/lib/program.js:8860:24)",
+              "Kernel._create (/tmp/jsii-runtime.3855963085/lib/program.js:8432:34)",
+              "Kernel.create (/tmp/jsii-runtime.3855963085/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/tmp/jsii-runtime.3855963085/lib/program.js:9757:36)",
+              "KernelHost.run (/tmp/jsii-runtime.3855963085/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/tmp/jsii-runtime.3855963085/lib/program.js:9721:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/StreamingservicebotInfraStack/StreamingServiceBotVpc/PrivateSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StreamingServiceBotVpcPrivateSubnet1DefaultRoute936869E7",
+            "trace": [
+              "PrivateSubnet.addRoute (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:811:23)",
+              "NatGatewayProvider.configureSubnet (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/nat.js:97:16)",
+              "NatGatewayProvider.configureNat (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/nat.js:91:18)",
+              "Vpc.createNatGateways (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:564:18)",
+              "new Vpc (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:422:22)",
+              "/tmp/jsii-runtime.3855963085/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/tmp/jsii-runtime.3855963085/lib/program.js:8860:24)",
+              "Kernel._create (/tmp/jsii-runtime.3855963085/lib/program.js:8432:34)",
+              "Kernel.create (/tmp/jsii-runtime.3855963085/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/tmp/jsii-runtime.3855963085/lib/program.js:9757:36)",
+              "KernelHost.run (/tmp/jsii-runtime.3855963085/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/tmp/jsii-runtime.3855963085/lib/program.js:9721:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/StreamingservicebotInfraStack/StreamingServiceBotVpc/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StreamingServiceBotVpcIGW2C1E83BE",
+            "trace": [
+              "new Vpc (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:409:25)",
+              "/tmp/jsii-runtime.3855963085/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/tmp/jsii-runtime.3855963085/lib/program.js:8860:24)",
+              "Kernel._create (/tmp/jsii-runtime.3855963085/lib/program.js:8432:34)",
+              "Kernel.create (/tmp/jsii-runtime.3855963085/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/tmp/jsii-runtime.3855963085/lib/program.js:9757:36)",
+              "KernelHost.run (/tmp/jsii-runtime.3855963085/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/tmp/jsii-runtime.3855963085/lib/program.js:9721:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/StreamingservicebotInfraStack/StreamingServiceBotVpc/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StreamingServiceBotVpcVPCGW0B4824A1",
+            "trace": [
+              "new Vpc (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/vpc.js:412:25)",
+              "/tmp/jsii-runtime.3855963085/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/tmp/jsii-runtime.3855963085/lib/program.js:8860:24)",
+              "Kernel._create (/tmp/jsii-runtime.3855963085/lib/program.js:8432:34)",
+              "Kernel.create (/tmp/jsii-runtime.3855963085/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/tmp/jsii-runtime.3855963085/lib/program.js:9757:36)",
+              "KernelHost.run (/tmp/jsii-runtime.3855963085/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/tmp/jsii-runtime.3855963085/lib/program.js:9721:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/StreamingservicebotInfraStack/StreamingServiceBotECSCluster/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StreamingServiceBotECSCluster276C1B28",
+            "trace": [
+              "new Cluster (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ecs/lib/cluster.js:79:25)",
+              "/tmp/jsii-runtime.3855963085/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/tmp/jsii-runtime.3855963085/lib/program.js:8860:24)",
+              "Kernel._create (/tmp/jsii-runtime.3855963085/lib/program.js:8432:34)",
+              "Kernel.create (/tmp/jsii-runtime.3855963085/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/tmp/jsii-runtime.3855963085/lib/program.js:9757:36)",
+              "KernelHost.run (/tmp/jsii-runtime.3855963085/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/tmp/jsii-runtime.3855963085/lib/program.js:9721:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/StreamingservicebotInfraStack/StreamingServiceBotTaskDef/TaskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StreamingServiceBotTaskDefTaskRoleB3DEE1B4",
+            "trace": [
+              "new Role (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-iam/lib/role.js:72:22)",
+              "new TaskDefinition (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ecs/lib/base/task-definition.js:97:43)",
+              "new FargateTaskDefinition (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ecs/lib/fargate/fargate-task-definition.js:22:9)",
+              "/tmp/jsii-runtime.3855963085/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/tmp/jsii-runtime.3855963085/lib/program.js:8860:24)",
+              "Kernel._create (/tmp/jsii-runtime.3855963085/lib/program.js:8432:34)",
+              "Kernel.create (/tmp/jsii-runtime.3855963085/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/tmp/jsii-runtime.3855963085/lib/program.js:9757:36)",
+              "KernelHost.run (/tmp/jsii-runtime.3855963085/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/tmp/jsii-runtime.3855963085/lib/program.js:9721:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/StreamingservicebotInfraStack/StreamingServiceBotTaskDef/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StreamingServiceBotTaskDef624CD6D8",
+            "trace": [
+              "new TaskDefinition (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ecs/lib/base/task-definition.js:104:25)",
+              "new FargateTaskDefinition (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ecs/lib/fargate/fargate-task-definition.js:22:9)",
+              "/tmp/jsii-runtime.3855963085/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/tmp/jsii-runtime.3855963085/lib/program.js:8860:24)",
+              "Kernel._create (/tmp/jsii-runtime.3855963085/lib/program.js:8432:34)",
+              "Kernel.create (/tmp/jsii-runtime.3855963085/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/tmp/jsii-runtime.3855963085/lib/program.js:9757:36)",
+              "KernelHost.run (/tmp/jsii-runtime.3855963085/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/tmp/jsii-runtime.3855963085/lib/program.js:9721:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/StreamingservicebotInfraStack/StreamingServiceBotService/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StreamingServiceBotService6B8080AA",
+            "trace": [
+              "new BaseService (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ecs/lib/base/base-service.js:142:25)",
+              "new FargateService (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ecs/lib/fargate/fargate-service.js:34:9)",
+              "/tmp/jsii-runtime.3855963085/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/tmp/jsii-runtime.3855963085/lib/program.js:8860:24)",
+              "Kernel._create (/tmp/jsii-runtime.3855963085/lib/program.js:8432:34)",
+              "Kernel.create (/tmp/jsii-runtime.3855963085/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/tmp/jsii-runtime.3855963085/lib/program.js:9757:36)",
+              "KernelHost.run (/tmp/jsii-runtime.3855963085/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/tmp/jsii-runtime.3855963085/lib/program.js:9721:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/StreamingservicebotInfraStack/StreamingServiceBotService/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StreamingServiceBotServiceSecurityGroupCDB5ABD5",
+            "trace": [
+              "new SecurityGroup (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ec2/lib/security-group.js:215:30)",
+              "FargateService.configureAwsVpcNetworkingWithSecurityGroups (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ecs/lib/base/base-service.js:535:31)",
+              "new FargateService (/tmp/jsii-kernel-QIA6oS/node_modules/monocdk/lib/aws-ecs/lib/fargate/fargate-service.js:52:14)",
+              "/tmp/jsii-runtime.3855963085/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/tmp/jsii-runtime.3855963085/lib/program.js:8860:24)",
+              "Kernel._create (/tmp/jsii-runtime.3855963085/lib/program.js:8432:34)",
+              "Kernel.create (/tmp/jsii-runtime.3855963085/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/tmp/jsii-runtime.3855963085/lib/program.js:9757:36)",
+              "KernelHost.run (/tmp/jsii-runtime.3855963085/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/tmp/jsii-runtime.3855963085/lib/program.js:9721:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/StreamingservicebotInfraStack/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Service",
+            "trace": [
+              "/tmp/jsii-runtime.3855963085/lib/program.js:8432:58",
+              "Kernel._wrapSandboxCode (/tmp/jsii-runtime.3855963085/lib/program.js:8860:24)",
+              "Kernel._create (/tmp/jsii-runtime.3855963085/lib/program.js:8432:34)",
+              "Kernel.create (/tmp/jsii-runtime.3855963085/lib/program.js:8173:29)",
+              "KernelHost.processRequest (/tmp/jsii-runtime.3855963085/lib/program.js:9757:36)",
+              "KernelHost.run (/tmp/jsii-runtime.3855963085/lib/program.js:9720:22)",
+              "Immediate._onImmediate (/tmp/jsii-runtime.3855963085/lib/program.js:9721:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "StreamingservicebotInfraStack"
+    }
+  },
+  "missing": [
+    {
+      "key": "availability-zones:account=:region=",
+      "provider": "availability-zones",
+      "props": {
+        "account": "",
+        "region": ""
+      }
+    }
+  ]
+}

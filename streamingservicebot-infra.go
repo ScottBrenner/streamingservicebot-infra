@@ -28,7 +28,7 @@ func NewStreamingservicebotInfraStack(scope constructs.Construct, id string, pro
 
 	cluster := ecs.NewCluster(stack, jsii.String("StreamingServiceBotECSCluster"), &ecs.ClusterProps{
 		ClusterName: jsii.String("streamingservicebot-cluster"),
-		Vpc: vpc,
+		Vpc:         vpc,
 	})
 
 	// Create Task Definition
@@ -38,14 +38,14 @@ func NewStreamingservicebotInfraStack(scope constructs.Construct, id string, pro
 	})
 	container := taskDef.AddContainer(jsii.String("StreamingServiceBotContainer"), &ecs.ContainerDefinitionOptions{
 		Environment: &map[string]*string{
-			"SSB_REDDIT_ID": jsii.String(os.Getenv("SSB_REDDIT_ID")),
-			"SSB_REDDIT_PASSWORD": jsii.String(os.Getenv("SSB_REDDIT_PASSWORD")),
-			"SSB_REDDIT_SECRET": jsii.String(os.Getenv("SSB_REDDIT_SECRET")),
-			"SSB_REDDIT_SUBREDDITS": jsii.String("hqtrackbot+streamingservicebot+AfroBashment+ambientmusic+BigBeat+boogiemusic+chicagohouse+chillout+Chipbreak+Chiptunes+classictrance+complextro+cxd+darkstep+DubStep+EBM+electrohiphop+electrohouse+ElectronicBlues+electronicdancemusic+ElectronicJazz+electronicmagic+electroswing+fidget+filth+frenchelectro+frenchhouse+funkhouse+fusiondancemusic+futurebeats+FutureGarage+futuresynth+glitch+glitchop+happyhardcore+hardhouse+idm+industrialmusic+latinhouse+liquiddubstep+moombahcore+nightstep+OldSkoolDance+OldskoolRave+Outrun+partymusic+plunderphonics+PsyBreaks+psytrance+purplemusic+raggajungle+SirBerryDinglesDiscog+skweee+swinghouse+tech_house+trance+tranceandbass+trap+tribalbeats+TropicalHouse+ukfunky+witchhouse+wuuB"),
-			"SSB_REDDIT_USERNAME": jsii.String(os.Getenv("SSB_REDDIT_USERNAME")),
-			"SSB_SPOTIFY_CLIENT_ID": jsii.String(os.Getenv("SSB_SPOTIFY_CLIENT_ID")),
+			"SSB_REDDIT_ID":             jsii.String(os.Getenv("SSB_REDDIT_ID")),
+			"SSB_REDDIT_PASSWORD":       jsii.String(os.Getenv("SSB_REDDIT_PASSWORD")),
+			"SSB_REDDIT_SECRET":         jsii.String(os.Getenv("SSB_REDDIT_SECRET")),
+			"SSB_REDDIT_SUBREDDITS":     jsii.String("hqtrackbot+streamingservicebot+AfroBashment+ambientmusic+BigBeat+boogiemusic+chicagohouse+chillout+Chipbreak+Chiptunes+classictrance+complextro+cxd+darkstep+DubStep+EBM+electrohiphop+electrohouse+ElectronicBlues+electronicdancemusic+ElectronicJazz+electronicmagic+electroswing+fidget+filth+frenchelectro+frenchhouse+funkhouse+fusiondancemusic+futurebeats+FutureGarage+futuresynth+glitch+glitchop+happyhardcore+hardhouse+idm+industrialmusic+latinhouse+liquiddubstep+moombahcore+nightstep+OldSkoolDance+OldskoolRave+Outrun+partymusic+plunderphonics+PsyBreaks+psytrance+purplemusic+raggajungle+SirBerryDinglesDiscog+skweee+swinghouse+tech_house+trance+tranceandbass+trap+tribalbeats+TropicalHouse+ukfunky+witchhouse+wuuB"),
+			"SSB_REDDIT_USERNAME":       jsii.String(os.Getenv("SSB_REDDIT_USERNAME")),
+			"SSB_SPOTIFY_CLIENT_ID":     jsii.String(os.Getenv("SSB_SPOTIFY_CLIENT_ID")),
 			"SSB_SPOTIFY_CLIENT_SECRET": jsii.String(os.Getenv("SSB_SPOTIFY_CLIENT_SECRET")),
-			"SSB_YOUTUBE_KEY": jsii.String(os.Getenv("SSB_YOUTUBE_KEY")),
+			"SSB_YOUTUBE_KEY":           jsii.String(os.Getenv("SSB_YOUTUBE_KEY")),
 		},
 		Image: ecs.ContainerImage_FromRegistry(jsii.String("ghcr.io/scottbrenner/streamingservicebot:main"), &ecs.RepositoryImageProps{}),
 	})

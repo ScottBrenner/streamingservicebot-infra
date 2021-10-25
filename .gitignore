@@ -334,3 +334,11 @@ ASALocalRun/
 out
 pkg
 debug
+
+### CDK-specific ignores ###
+*.swp
+cdk.context.json
+package-lock.json
+yarn.lock
+.cdk.staging
+cdk.out/

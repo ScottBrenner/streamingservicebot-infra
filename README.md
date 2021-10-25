@@ -1,6 +1,6 @@
-# Welcome to your CDK Go project!
+# streamingservicebot-infra
 
-This is a blank project for Go development with CDK.
+Infrastructure for [u/streamingservicebot](https://old.reddit.com/user/streamingservicebot), provisioned with the AWS CDK in Go.
 
 **NOTICE**: Go support is still in Developer Preview. This implies that APIs may
 change while we address early feedback from the community. We would love to hear

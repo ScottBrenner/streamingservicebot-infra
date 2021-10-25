@@ -2,6 +2,7 @@ package main
 
 import (
 	"os"
+
 	"github.com/aws/aws-cdk-go/awscdk"
 	ec2 "github.com/aws/aws-cdk-go/awscdk/awsec2"
 	ecs "github.com/aws/aws-cdk-go/awscdk/awsecs"
@@ -26,6 +27,7 @@ func NewStreamingservicebotInfraStack(scope constructs.Construct, id string, pro
 	})
 
 	cluster := ecs.NewCluster(stack, jsii.String("StreamingServiceBotECSCluster"), &ecs.ClusterProps{
+		ClusterName: jsii.String("streamingservicebot-cluster"),
 		Vpc: vpc,
 	})
 
@@ -39,12 +41,13 @@ func NewStreamingservicebotInfraStack(scope constructs.Construct, id string, pro
 			"SSB_REDDIT_ID": jsii.String(os.Getenv("SSB_REDDIT_ID")),
 			"SSB_REDDIT_PASSWORD": jsii.String(os.Getenv("SSB_REDDIT_PASSWORD")),
 			"SSB_REDDIT_SECRET": jsii.String(os.Getenv("SSB_REDDIT_SECRET")),
+			"SSB_REDDIT_SUBREDDITS": jsii.String("hqtrackbot+streamingservicebot"),
 			"SSB_REDDIT_USERNAME": jsii.String(os.Getenv("SSB_REDDIT_USERNAME")),
 			"SSB_SPOTIFY_CLIENT_ID": jsii.String(os.Getenv("SSB_SPOTIFY_CLIENT_ID")),
 			"SSB_SPOTIFY_CLIENT_SECRET": jsii.String(os.Getenv("SSB_SPOTIFY_CLIENT_SECRET")),
 			"SSB_YOUTUBE_KEY": jsii.String(os.Getenv("SSB_YOUTUBE_KEY")),
-		},                    
-		Image: ecs.ContainerImage_FromRegistry(jsii.String("ghcr.io/scottbrenner/streamingservicebot"), &ecs.RepositoryImageProps{}),
+		},
+		Image: ecs.ContainerImage_FromRegistry(jsii.String("ghcr.io/scottbrenner/streamingservicebot:main"), &ecs.RepositoryImageProps{}),
 	})
 
 	container.AddPortMappings(&ecs.PortMapping{
@@ -55,6 +58,7 @@ func NewStreamingservicebotInfraStack(scope constructs.Construct, id string, pro
 	// Create Fargate Service
 	service := ecs.NewFargateService(stack, jsii.String("StreamingServiceBotService"), &ecs.FargateServiceProps{
 		Cluster:        cluster,
+		ServiceName:    jsii.String("streamingservicebot-service"),
 		TaskDefinition: taskDef,
 	})
 

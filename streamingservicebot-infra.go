@@ -44,6 +44,7 @@ func NewStreamingservicebotInfraStack(scope constructs.Construct, id string, pro
 	taskDef := ecs.NewFargateTaskDefinition(stack, jsii.String("StreamingServiceBotTaskDef"), &ecs.FargateTaskDefinitionProps{
 		MemoryLimitMiB: jsii.Number(512),
 		Cpu:            jsii.Number(256),
+		Family:         jsii.String("streamingservicebot-task"),
 	})
 	container := taskDef.AddContainer(jsii.String("StreamingServiceBotContainer"), &ecs.ContainerDefinitionOptions{
 		Environment: &map[string]*string{

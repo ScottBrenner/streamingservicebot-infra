@@ -23,7 +23,8 @@ func NewStreamingservicebotInfraStack(scope constructs.Construct, id string, pro
 
 	// Create VPC and Cluster
 	vpc := ec2.NewVpc(stack, jsii.String("StreamingServiceBotVpc"), &ec2.VpcProps{
-		MaxAzs: jsii.Number(1),
+		MaxAzs:      jsii.Number(1),
+		NatGateways: jsii.Number(0),
 	})
 
 	cluster := ecs.NewCluster(stack, jsii.String("StreamingServiceBotECSCluster"), &ecs.ClusterProps{

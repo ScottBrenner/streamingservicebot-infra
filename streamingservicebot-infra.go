@@ -4,6 +4,7 @@ import (
 	"os"
 
 	"github.com/aws/aws-cdk-go/awscdk"
+	"github.com/aws/aws-cdk-go/awscdk/awsec2"
 	ec2 "github.com/aws/aws-cdk-go/awscdk/awsec2"
 	ecs "github.com/aws/aws-cdk-go/awscdk/awsecs"
 	"github.com/aws/constructs-go/constructs/v3"
@@ -25,6 +26,13 @@ func NewStreamingservicebotInfraStack(scope constructs.Construct, id string, pro
 	vpc := ec2.NewVpc(stack, jsii.String("StreamingServiceBotVpc"), &ec2.VpcProps{
 		MaxAzs:      jsii.Number(1),
 		NatGateways: jsii.Number(0),
+		SubnetConfiguration: &[]*awsec2.SubnetConfiguration{
+			{
+				Name:       jsii.String("PublicSubnet"),
+				SubnetType: awsec2.SubnetType_PUBLIC,
+				CidrMask:   jsii.Number(24),
+			},
+		},
 	})
 
 	cluster := ecs.NewCluster(stack, jsii.String("StreamingServiceBotECSCluster"), &ecs.ClusterProps{
